@@ -55,3 +55,19 @@ def lemmatize_tokens(tokenized_sentences):
 
 
     return processed_data
+
+
+def extract_tokens_only(tokenized_sentences):
+    """
+    transforme [[token, lemma, pos]] → ["token", ...]
+    """
+    tokens_clean = []
+
+    for sentence in tokenized_sentences:
+        sentence_tokens = []
+        for token in sentence:
+            if token.isalnum():
+                sentence_tokens.append(token.lower())
+        tokens_clean.append(sentence_tokens)
+
+    return tokens_clean
