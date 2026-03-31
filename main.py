@@ -1,3 +1,5 @@
+#partie word2vec
+
 '''from src.data_loader import load_dataset, extract_pairs
 from src.preprocessing import clean_text, normalize_text, tokenize_text, extract_tokens_only
 from src.word2vec_model import train_word2vec
@@ -39,7 +41,7 @@ if __name__ == "__main__":
     main()'''
 
 
-
+#partie BERT
 from src.bert_vectorizer import get_bert_embedding
 
 def main():
@@ -50,5 +52,7 @@ def main():
     print("Taille du vecteur :", len(embedding))
     print("Début du vecteur :", embedding[:10])
 
+    #print(get_bert_embedding("Hello"))
+    #print(get_bert_embedding("Hi"))
 if __name__ == "__main__":
     main()
