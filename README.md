@@ -62,7 +62,7 @@ Cependant, il est possible de supprimer le warning :
 - Executer la commande suivante dans le terminal :
 
 ```bash
-huggingface-cli login [token generé]
+huggingface-cli login [token genéré]
 ```
 
 Lors du chargement du modèle GloVe avec gensim, l’erreur suivante peut apparaître :
