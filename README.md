@@ -48,6 +48,7 @@ Dans main.py Décommentez la partie GLOVE et commentez le reste
 python main.py
 ```
 
+## Remarques 
 Au premier lancement il est possible d'obtenir ce warning :
 
 ```bash
