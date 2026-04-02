@@ -54,5 +54,7 @@ def main():
 
     #print(get_bert_embedding("Hello"))
     #print(get_bert_embedding("Hi"))
+    #print(get_bert_embedding("Heyy"))
+    
 if __name__ == "__main__":
     main()
