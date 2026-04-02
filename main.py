@@ -1,6 +1,6 @@
 #partie word2vec
 
-'''from src.data_loader import load_dataset, extract_pairs
+""" from src.data_loader import load_dataset, extract_pairs
 from src.preprocessing import clean_text, normalize_text, tokenize_text, extract_tokens_only
 from src.word2vec_model import train_word2vec
 
@@ -35,14 +35,12 @@ def main():
     print ("\nMots similaires a 'hello':")
     print(model.wv.most_similar("hello"))
     print (model.wv.most_similar("fee"))
+"""
 
-
-if __name__ == "__main__":
-    main()'''
 
 
 #partie BERT
-from src.bert_vectorizer import get_bert_embedding
+"""from src.bert_vectorizer import get_bert_embedding
 
 def main():
     sentence = "What is the fee?"
@@ -51,10 +49,36 @@ def main():
 
     print("Taille du vecteur :", len(embedding))
     print("Début du vecteur :", embedding[:10])
+    print(get_bert_embedding("Hello"))
+    print(get_bert_embedding("Hi"))
+    print(get_bert_embedding("Heyy"))
+"""
 
-    #print(get_bert_embedding("Hello"))
-    #print(get_bert_embedding("Hi"))
-    #print(get_bert_embedding("Heyy"))
-    
+
+#partie GLOVE
+from src.glove_vectorizer import load_glove_model, sentence_to_vector
+from src.preprocessing import clean_text, normalize_text, tokenize_text, extract_tokens_only
+
+def main():
+    sentence = "What is the fee?"
+
+    # preprocessing
+    text = clean_text(sentence)
+    text = normalize_text(text)
+    tokenized = tokenize_text(text)
+    tokens = extract_tokens_only(tokenized)
+    #tokens = [word for sent in tokens for word in sent] 
+    #pour chaque phrase dans tokens, pour chaque mot dans cette phrase, ajoute le mot
+    tokens = []
+    for sent in tokens:
+        for word in sent:
+            tokens.append(word)
+
+    model = load_glove_model()
+    vector = sentence_to_vector(tokens, model)
+
+    print("Taille vecteur GloVe :", len(vector))
+    print("Début vecteur :", vector[:10])
+
 if __name__ == "__main__":
     main()
