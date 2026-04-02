@@ -49,6 +49,8 @@ python main.py
 ```
 
 ## Remarques 
+
+### Avec BERT :
 Au premier lancement il est possible d'obtenir ce warning :
 
 ```bash
@@ -65,14 +67,15 @@ Cependant, il est possible de supprimer le warning :
 ```bash
 huggingface-cli login [token genéré]
 ```
-
+### Avec Glove :
 Lors du chargement du modèle GloVe avec gensim, l’erreur suivante peut apparaître :
 
 ```bash
 ssl.SSLCertVerificationError: certificate verify failed
 ```
 
-Cette erreur est liée à une mauvaise configuration des certificats SSL sur l’environnement local (Windows + Python), empêchant le téléchargement du modèle depuis Internet.
+Cette erreur est liée à une mauvaise configuration des certificats SSL sur l’environnement local, empêchant le téléchargement du modèle depuis Internet.
+
 Pour contourner ce problème, la vérification SSL a été désactivée dans glove_vectorizer.py :
 
 ```python
